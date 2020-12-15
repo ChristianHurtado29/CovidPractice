@@ -45,8 +45,8 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print("error is \(error.localizedDescription)")
             case .success(let covidInfo):
-                self.countries = covidInfo.Countries
                 self.globalInfo = covidInfo.Global
+                self.countries = covidInfo.Countries
                 dump(self.globalInfo)
             }
         }
@@ -95,8 +95,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = globalTableView.dequeueReusableCell(withIdentifier: "globalCell") as? GlobalTableViewCell else {
                 fatalError("could not find cell/indexpath")
             }
-            let globe = globalInfo
-            cell.configureCell()
+            var globe = globalInfo
+            cell.configureCell(globe)
             return cell
         }
     }

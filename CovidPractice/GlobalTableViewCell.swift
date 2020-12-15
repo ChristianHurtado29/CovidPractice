@@ -13,10 +13,11 @@ class GlobalTableViewCell: UITableViewCell {
     @IBOutlet weak var totalRecovered: UILabel!
     @IBOutlet weak var totalDead: UILabel!
     
-    func configureCell() {
-        totalCases.text =  "ok"
-//        totalRecovered.text = "Total Recovered: \(globe.NewDeaths.description)"
-//        totalDead.text = "Total Dead: \(globe.TotalDeaths.description)"
+    func configureCell(_ globe: GlobalInfo?) {
+        self.backgroundColor = .lightGray
+        totalCases.text =  "Total Cases: \(globe?.TotalConfirmed.description ?? "")"
+        totalRecovered.text = "Total Recovered: \(globe?.NewDeaths.description ?? "")"
+        totalDead.text = "Total Dead: \(globe?.TotalDeaths.description ?? "")"
     }
     
 }
