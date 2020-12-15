@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13655E6C2588507300E3E02E /* GlobalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13655E6B2588507300E3E02E /* GlobalTableViewCell.swift */; };
 		13C85CCE258732B600D703E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C85CCD258732B600D703E5 /* AppDelegate.swift */; };
 		13C85CD0258732B600D703E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C85CCF258732B600D703E5 /* SceneDelegate.swift */; };
 		13C85CD2258732B600D703E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C85CD1258732B600D703E5 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13655E6B2588507300E3E02E /* GlobalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTableViewCell.swift; sourceTree = "<group>"; };
 		13C85CCA258732B600D703E5 /* CovidPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13C85CCD258732B600D703E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13C85CCF258732B600D703E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				13C85CCF258732B600D703E5 /* SceneDelegate.swift */,
 				13C85D05258732EF00D703E5 /* Covid.swift */,
 				13C85D00258732C500D703E5 /* CovidAPI.swift */,
+				13655E6B2588507300E3E02E /* GlobalTableViewCell.swift */,
 				13C85CD1258732B600D703E5 /* ViewController.swift */,
 				13C85CD3258732B600D703E5 /* Main.storyboard */,
 				13C85CD6258732B800D703E5 /* Assets.xcassets */,
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13655E6C2588507300E3E02E /* GlobalTableViewCell.swift in Sources */,
 				13C85D01258732C500D703E5 /* CovidAPI.swift in Sources */,
 				13C85CD2258732B600D703E5 /* ViewController.swift in Sources */,
 				13C85CCE258732B600D703E5 /* AppDelegate.swift in Sources */,

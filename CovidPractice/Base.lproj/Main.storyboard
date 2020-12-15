@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ox4-YT-IKW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ox4-YT-IKW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nif-i8-v15">
-                                <rect key="frame" x="0.0" y="138" width="414" height="724"/>
+                                <rect key="frame" x="0.0" y="344" width="414" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="countryCell" textLabel="8Sh-m5-eLl" detailTextLabel="egc-y6-xZE" style="IBUITableViewCellStyleSubtitle" id="3cw-Hn-OgT">
@@ -47,9 +47,66 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ltf-Ah-2a5">
-                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tVt-bD-iD1">
+                                <rect key="frame" x="0.0" y="144" width="414" height="192"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="globalCell" rowHeight="136" id="dIb-0D-gZc" customClass="GlobalTableViewCell" customModule="CovidPractice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dIb-0D-gZc" id="Nch-F9-OgY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Global Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlz-i2-l75">
+                                                    <rect key="frame" x="20" y="11" width="374" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Cases:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyF-Zc-thf">
+                                                    <rect key="frame" x="20" y="52" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Recovered:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1l-y4-kcQ">
+                                                    <rect key="frame" x="20" y="81" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Dead:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-8E-K1j">
+                                                    <rect key="frame" x="20" y="110" width="374" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Dlz-i2-l75" firstAttribute="top" secondItem="Nch-F9-OgY" secondAttribute="topMargin" id="8SV-xm-R9S"/>
+                                                <constraint firstItem="e1l-y4-kcQ" firstAttribute="leading" secondItem="Nch-F9-OgY" secondAttribute="leadingMargin" id="Bfh-kU-oww"/>
+                                                <constraint firstItem="GyF-Zc-thf" firstAttribute="leading" secondItem="Dlz-i2-l75" secondAttribute="leading" id="Q21-fj-m6J"/>
+                                                <constraint firstItem="GyF-Zc-thf" firstAttribute="top" secondItem="Dlz-i2-l75" secondAttribute="bottom" constant="8" symbolic="YES" id="Qx4-MT-Dxf"/>
+                                                <constraint firstItem="Dlz-i2-l75" firstAttribute="leading" secondItem="Nch-F9-OgY" secondAttribute="leadingMargin" id="nsS-h5-Dc5"/>
+                                                <constraint firstItem="e1l-y4-kcQ" firstAttribute="top" secondItem="GyF-Zc-thf" secondAttribute="bottom" constant="8" symbolic="YES" id="rG5-C5-t16"/>
+                                                <constraint firstItem="GyF-Zc-thf" firstAttribute="trailing" secondItem="Dlz-i2-l75" secondAttribute="trailing" id="tE6-HX-2aw"/>
+                                                <constraint firstItem="Dlz-i2-l75" firstAttribute="trailing" secondItem="Nch-F9-OgY" secondAttribute="trailingMargin" id="uG3-FH-utX"/>
+                                                <constraint firstItem="e1l-y4-kcQ" firstAttribute="trailing" secondItem="Nch-F9-OgY" secondAttribute="trailingMargin" id="yan-fo-xSK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="totalCases" destination="GyF-Zc-thf" id="MyZ-yC-4Cl"/>
+                                            <outlet property="totalDead" destination="SeT-8E-K1j" id="DyX-lN-1Er"/>
+                                            <outlet property="totalRecovered" destination="e1l-y4-kcQ" id="A15-V2-5f0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,9 +115,13 @@
                             <constraint firstItem="Ltf-Ah-2a5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3pI-SC-wlC"/>
                             <constraint firstItem="Ltf-Ah-2a5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="74S-qp-YUN"/>
                             <constraint firstItem="Ltf-Ah-2a5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dfe-46-vfb"/>
-                            <constraint firstItem="nif-i8-v15" firstAttribute="top" secondItem="Ltf-Ah-2a5" secondAttribute="bottom" id="Sdw-Tr-Di6"/>
+                            <constraint firstItem="tVt-bD-iD1" firstAttribute="top" secondItem="Ltf-Ah-2a5" secondAttribute="bottom" id="Q84-oh-kHK"/>
+                            <constraint firstItem="nif-i8-v15" firstAttribute="top" secondItem="Ltf-Ah-2a5" secondAttribute="bottom" constant="200" id="Sdw-Tr-Di6"/>
                             <constraint firstItem="nif-i8-v15" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VjC-nH-DvW"/>
-                            <constraint firstItem="nif-i8-v15" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="bGQ-nt-3Cq"/>
+                            <constraint firstItem="tVt-bD-iD1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YVY-3y-w1E"/>
+                            <constraint firstItem="nif-i8-v15" firstAttribute="top" secondItem="tVt-bD-iD1" secondAttribute="bottom" constant="8" symbolic="YES" id="b7k-rs-bGs"/>
+                            <constraint firstItem="nif-i8-v15" firstAttribute="top" secondItem="tVt-bD-iD1" secondAttribute="bottom" constant="8" symbolic="YES" id="fqX-vh-opC"/>
+                            <constraint firstItem="tVt-bD-iD1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gRI-aT-nIv"/>
                             <constraint firstItem="nif-i8-v15" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qoa-b6-1Et"/>
                         </constraints>
                     </view>
@@ -68,6 +129,7 @@
                     <connections>
                         <outlet property="countriesTableView" destination="nif-i8-v15" id="B9q-99-f0P"/>
                         <outlet property="countrySearch" destination="Ltf-Ah-2a5" id="GMz-YP-413"/>
+                        <outlet property="globalTableView" destination="tVt-bD-iD1" id="A2h-Ms-dvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

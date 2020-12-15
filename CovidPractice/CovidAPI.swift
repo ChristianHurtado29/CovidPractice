@@ -10,7 +10,7 @@ import UIKit
 
 class CovidAPI {
    
-    func loadCovidInfo(completion: @escaping (Result<[CountryInfo], Error>) -> ()) {
+    func loadCovidInfo(completion: @escaping (Result<CovidWrap, Error>) -> ()) {
         
         let urlEndpoint = "https://api.covid19api.com/summary"
         guard let url = URL(string: urlEndpoint) else {
@@ -27,7 +27,7 @@ class CovidAPI {
                 do {
                     let covidResult = try JSONDecoder().decode(CovidWrap.self, from: data)
                     dump(covidResult)
-                    return completion(.success(covidResult.Countries))
+                    return completion(.success(covidResult))
                 } catch {
                     print("error in data \(error)")
                 }
