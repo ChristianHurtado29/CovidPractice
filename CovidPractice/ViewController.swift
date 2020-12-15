@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         countriesTableView.dataSource = self
         globalTableView.dataSource = self
         globalTableView.delegate = self
+        globalTableView.backgroundColor = .systemOrange
         countrySearch.delegate = self
     }
     
@@ -52,11 +53,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func loadGlobalInfo() {
-        
-    }
-    
-    func flag(_ countryCo:String) -> String {
+    func flag(_ countryCo: String) -> String {
         let base = 127397
         var usv = String.UnicodeScalarView()
         for i in countryCo.utf16 {
@@ -95,7 +92,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = globalTableView.dequeueReusableCell(withIdentifier: "globalCell") as? GlobalTableViewCell else {
                 fatalError("could not find cell/indexpath")
             }
-            var globe = globalInfo
+            let globe = globalInfo
             cell.configureCell(globe)
             return cell
         }

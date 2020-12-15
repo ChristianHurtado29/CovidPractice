@@ -17,6 +17,8 @@ struct GlobalInfo: Decodable {
     let TotalConfirmed: Int
     let NewDeaths: Int
     let TotalDeaths: Int
+    let NewRecovered: Int
+    let TotalRecovered: Int
 }
 
 struct CountryInfo: Decodable {
