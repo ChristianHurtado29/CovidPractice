@@ -12,15 +12,15 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var confirmedCase: UILabel!
-    @IBOutlet weak var deathCase: UILabel!
-    @IBOutlet weak var recoveryCase: UILabel!
-    
+//    @IBOutlet weak var deathCase: UILabel!
+//    @IBOutlet weak var recoveryCase: UILabel!
+//
     func configureCell(_ country: CountryInfo) {
         flagLabel.text = flag(country.CountryCode)
         countryName.text = country.Country
-        confirmedCase.text = "Total confirmed: \(country.TotalConfirmed.description)"
-        deathCase.text = "Total dead: \(country.TotalDeaths.description)"
-        recoveryCase.text = "Total recovered: \(country.TotalRecovered.description)"
+        confirmedCase.text = "# of cases: \(country.TotalConfirmed.description)"
+//        deathCase.text = "Total dead: \(country.TotalDeaths.description)"
+//        recoveryCase.text = "Total recovered: \(country.TotalRecovered.description)"
     }
     
     private func flag(_ countryCo: String) -> String {

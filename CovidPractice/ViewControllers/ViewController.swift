@@ -41,6 +41,14 @@ class ViewController: UIViewController {
         countrySearch.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? DetailedViewController, let indexPath = countriesTableView.indexPathForSelectedRow else {
+            fatalError("could not identify country selected")
+        }
+        let country = countries[indexPath.row]
+        detailVC.country = country
+    }
+    
     private func loadCountryInfo() {
         apiClient.loadCovidInfo { (result) in
             switch result {
@@ -85,15 +93,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
         case countriesTableView:
-            guard let cell = countriesTableView.dequeueReusableCell(withIdentifier: "countryCell") else {
+            guard let cell = countriesTableView.dequeueReusableCell(withIdentifier: "countryCell") as? CountryTableViewCell else {
                 fatalError("could not find cell/indexpath")
             }
-            
             let country = countries[indexPath.row]
-            let countryFlag = flag(country.CountryCode)
-            let recoveredPct = Double(country.TotalRecovered) / Double(country.TotalConfirmed) * 100.0
-            cell.textLabel?.text = "\(country.Country) \(countryFlag)"
-            cell.detailTextLabel?.text = "Confirmed: \(country.TotalConfirmed.description), Rec Pct: %\(recoveredPct.description)"
+            cell.configureCell(country)
             return cell
         default:
             guard let cell = globalTableView.dequeueReusableCell(withIdentifier: "globalCell") as? GlobalTableViewCell else {
@@ -109,7 +113,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if tableView == globalTableView {
             return 170
         } else {
-            return 80
+            return 120
         }
     }
     

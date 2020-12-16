@@ -31,13 +31,17 @@ struct CountryInfo: Decodable {
     let TotalRecovered: Int
 }
 
+//struct CountryWrap: Decodable {
+//    let country: [Country]
+//}
+
 struct Country: Decodable {
     let name: String
     let alpha2Code: String
     let alpha3Code: String
     let capital: String
-    let region: String
+    let subregion: String
     let population: Int
-    let denonym: String
+    let demonym: String
     let flag: String
 }

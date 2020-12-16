@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		13655E6C2588507300E3E02E /* GlobalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13655E6B2588507300E3E02E /* GlobalTableViewCell.swift */; };
 		13949DF32589A64400F4FEBE /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13949DF22589A64400F4FEBE /* CountryTableViewCell.swift */; };
 		13949DF82589C17600F4FEBE /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13949DF72589C17600F4FEBE /* DetailedViewController.swift */; };
+		13949DFE2589D1EA00F4FEBE /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 13949DFD2589D1EA00F4FEBE /* ImageKit */; };
 		13C85CCE258732B600D703E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C85CCD258732B600D703E5 /* AppDelegate.swift */; };
 		13C85CD0258732B600D703E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C85CCF258732B600D703E5 /* SceneDelegate.swift */; };
 		13C85CD2258732B600D703E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C85CD1258732B600D703E5 /* ViewController.swift */; };
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13949DFE2589D1EA00F4FEBE /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13949E022589DBEF00F4FEBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13C85D05258732EF00D703E5 /* Covid.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		13949E062589DBFF00F4FEBE /* NetworkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				13C85D00258732C500D703E5 /* CovidAPI.swift */,
+			);
+			path = NetworkHelper;
+			sourceTree = "<group>";
+		};
+		13949E0A2589DC1600F4FEBE /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				13655E6B2588507300E3E02E /* GlobalTableViewCell.swift */,
+				13949DF22589A64400F4FEBE /* CountryTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		13949E112589DC2D00F4FEBE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				13C85CD1258732B600D703E5 /* ViewController.swift */,
+				13949DF72589C17600F4FEBE /* DetailedViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		13C85CC1258732B600D703E5 = {
 			isa = PBXGroup;
 			children = (
@@ -111,12 +147,10 @@
 			children = (
 				13C85CCD258732B600D703E5 /* AppDelegate.swift */,
 				13C85CCF258732B600D703E5 /* SceneDelegate.swift */,
-				13C85D05258732EF00D703E5 /* Covid.swift */,
-				13C85D00258732C500D703E5 /* CovidAPI.swift */,
-				13655E6B2588507300E3E02E /* GlobalTableViewCell.swift */,
-				13949DF22589A64400F4FEBE /* CountryTableViewCell.swift */,
-				13C85CD1258732B600D703E5 /* ViewController.swift */,
-				13949DF72589C17600F4FEBE /* DetailedViewController.swift */,
+				13949E022589DBEF00F4FEBE /* Models */,
+				13949E062589DBFF00F4FEBE /* NetworkHelper */,
+				13949E0A2589DC1600F4FEBE /* TableViewCells */,
+				13949E112589DC2D00F4FEBE /* ViewControllers */,
 				13C85CD3258732B600D703E5 /* Main.storyboard */,
 				13C85CD6258732B800D703E5 /* Assets.xcassets */,
 				13C85CD8258732B800D703E5 /* LaunchScreen.storyboard */,
@@ -159,6 +193,9 @@
 			dependencies = (
 			);
 			name = CovidPractice;
+			packageProductDependencies = (
+				13949DFD2589D1EA00F4FEBE /* ImageKit */,
+			);
 			productName = CovidPractice;
 			productReference = 13C85CCA258732B600D703E5 /* CovidPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +267,9 @@
 				Base,
 			);
 			mainGroup = 13C85CC1258732B600D703E5;
+			packageReferences = (
+				13949DFC2589D1EA00F4FEBE /* XCRemoteSwiftPackageReference "ImageKit" */,
+			);
 			productRefGroup = 13C85CCB258732B600D703E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -613,6 +653,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		13949DFC2589D1EA00F4FEBE /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/ImageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		13949DFD2589D1EA00F4FEBE /* ImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 13949DFC2589D1EA00F4FEBE /* XCRemoteSwiftPackageReference "ImageKit" */;
+			productName = ImageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 13C85CC2258732B600D703E5 /* Project object */;
 }

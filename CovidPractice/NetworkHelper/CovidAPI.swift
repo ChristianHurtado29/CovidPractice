@@ -35,7 +35,7 @@ class CovidAPI {
         dataTask.resume()
     }
     
-    func loadCountryInfo(countryName: String, completion: @escaping (Result<Country, Error>) -> ()) {
+    func loadCountryInfo(countryName: String, completion: @escaping (Result<[Country], Error>) -> ()) {
         let urlEndpoint = "https://restcountries.eu/rest/v2/name/\(countryName)"
         guard let url = URL(string: urlEndpoint) else {
             fatalError("could not load countries regular info")
@@ -49,7 +49,7 @@ class CovidAPI {
             
             if let data = data {
                 do {
-                    let countryInfo = try JSONDecoder().decode(Country.self, from: data)
+                    let countryInfo = try JSONDecoder().decode([Country].self, from: data)
                     return completion(.success(countryInfo))
                 } catch {
                     print("error in country info retrieving \(error)")
