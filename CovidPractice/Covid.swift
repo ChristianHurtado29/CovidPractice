@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CovidWrap:Decodable {
+struct CovidWrap: Decodable {
     let Global: GlobalInfo
     let Countries: [CountryInfo]
 }
@@ -29,4 +29,15 @@ struct CountryInfo: Decodable {
     let NewDeaths: Int
     let TotalDeaths: Int
     let TotalRecovered: Int
+}
+
+struct Country: Decodable {
+    let name: String
+    let alpha2Code: String
+    let alpha3Code: String
+    let capital: String
+    let region: String
+    let population: Int
+    let denonym: String
+    let flag: String
 }

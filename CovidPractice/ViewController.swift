@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         loadCountryInfo()
         countriesTableView.dataSource = self
+        countriesTableView.delegate = self
         globalTableView.dataSource = self
         globalTableView.delegate = self
         globalTableView.backgroundColor = .systemOrange
@@ -61,7 +62,6 @@ class ViewController: UIViewController {
         }
         return String(usv)
     }
-    
     
 }
 
@@ -109,9 +109,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if tableView == globalTableView {
             return 170
         } else {
-            return 100
+            return 80
         }
     }
+    
 }
 
 extension ViewController: UISearchBarDelegate {
