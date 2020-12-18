@@ -14,13 +14,18 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var confirmedCase: UILabel!
 //    @IBOutlet weak var deathCase: UILabel!
 //    @IBOutlet weak var recoveryCase: UILabel!
+    
+    func formatCommas(_ num: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.decimal
+        let formattedNum = formatter.string(from: NSNumber(value: num))
+        return formattedNum!
+    }
 //
     func configureCell(_ country: CountryInfo) {
         flagLabel.text = flag(country.CountryCode)
         countryName.text = country.Country
-        confirmedCase.text = "# of cases: \(country.TotalConfirmed.description)"
-//        deathCase.text = "Total dead: \(country.TotalDeaths.description)"
-//        recoveryCase.text = "Total recovered: \(country.TotalRecovered.description)"
+        confirmedCase.text = "# of cases: \(formatCommas(country.TotalConfirmed))"
     }
     
     private func flag(_ countryCo: String) -> String {

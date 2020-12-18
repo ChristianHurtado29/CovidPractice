@@ -13,7 +13,7 @@ class DetailedViewController: UIViewController {
     var apiClient = CovidAPI()
     
     @IBOutlet weak var countryName: UILabel!
-    @IBOutlet weak var countryFlag: UIImageView!
+    @IBOutlet weak var countryFlag: UILabel!
     @IBOutlet weak var countryCapital: UILabel!
     @IBOutlet weak var countryPopulation: UILabel!
     @IBOutlet weak var summaryText: UITextView!
@@ -21,26 +21,25 @@ class DetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fillInfo()
+        navigationItem.title = "\(country.Country)'s Covid Profile"
     }
     
-    func fetchImage(str: String) {
-        guard let url = URL(string: str) else {
-            return
-        }
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error {
-                print("error in photo retrieve \(error.localizedDescription)")
-            }
-            if let data = data {
-                DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                self.countryFlag.image = image
-                }
-            }
-        }
-        dataTask.resume()
+    func formatCommas(_ num: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.decimal
+        let formattedNum = formatter.string(from: NSNumber(value: num))
+        return formattedNum!
     }
     
+    func flag(_ countryCo: String) -> String {
+        let base = 127397
+        var usv = String.UnicodeScalarView()
+        for i in countryCo.utf16 {
+            usv.append(UnicodeScalar(base + Int(i))!)
+        }
+        return String(usv)
+    }
+        
     func fillInfo() {
         apiClient.loadCountryInfo(countryName: self.country.Country) { (result) in
             switch result {
@@ -49,13 +48,14 @@ class DetailedViewController: UIViewController {
             case .success(let basicCountry):
                 DispatchQueue.main.async {
                     let recoveredPct = Double(self.country.TotalRecovered) / Double(self.country.TotalConfirmed) * 100.0
+                    let recText: String = String(format: "%.2f", recoveredPct)
                     let deathPct = Double(self.country.TotalDeaths) / Double(self.country.TotalConfirmed) * 100
+                    let deathText: String = String(format: "%.2f", deathPct)
                     self.countryCapital.text = "Capital: \(basicCountry.first?.capital ?? "no cap")"
-                    self.countryPopulation.text = "Population: \(basicCountry.first?.population.description ?? "no pop")"
+                    self.countryPopulation.text = "Population: \(self.formatCommas(basicCountry.first?.population ?? 0))"
                     self.countryName.text = basicCountry.first?.name
-                    self.summaryText.text = "The most recent information states that the \(basicCountry.first?.subregion ?? "")n nation has \(self.country.NewConfirmed) new cases, bringing their total cases to \(self.country.TotalConfirmed). To date, \(self.country.TotalRecovered) \(basicCountry.first?.demonym ?? "")s have made full recoveries(% \(recoveredPct.description), while \(self.country.TotalDeaths) have died (% \(deathPct.description))."
-                    self.fetchImage(str: basicCountry.first!.flag)
-//                    let urlImage = URL(string: basicCountry.first!.flag)
+                    self.summaryText.text = "The most recent information states that the \(basicCountry.first?.subregion ?? "")n nation has \(self.formatCommas(self.country.NewConfirmed)) new cases, bringing their total cases to \(self.formatCommas(self.country.TotalConfirmed)). To date, \(self.formatCommas(self.country.TotalRecovered)) \(basicCountry.first?.demonym ?? "")s have made full recoveries(% \(recText)), while \(self.formatCommas(self.country.TotalDeaths)) have died (% \(deathText))."
+                    self.countryFlag.text = self.flag(basicCountry.first?.alpha2Code ?? "us")
                 }
             }
         }

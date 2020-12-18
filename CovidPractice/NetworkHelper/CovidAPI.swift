@@ -36,7 +36,8 @@ class CovidAPI {
     }
     
     func loadCountryInfo(countryName: String, completion: @escaping (Result<[Country], Error>) -> ()) {
-        let urlEndpoint = "https://restcountries.eu/rest/v2/name/\(countryName)"
+        let search = countryName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        let urlEndpoint = "https://restcountries.eu/rest/v2/name/\(search)"
         guard let url = URL(string: urlEndpoint) else {
             fatalError("could not load countries regular info")
         }

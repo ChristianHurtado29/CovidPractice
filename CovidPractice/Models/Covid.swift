@@ -31,10 +31,6 @@ struct CountryInfo: Decodable {
     let TotalRecovered: Int
 }
 
-//struct CountryWrap: Decodable {
-//    let country: [Country]
-//}
-
 struct Country: Decodable {
     let name: String
     let alpha2Code: String

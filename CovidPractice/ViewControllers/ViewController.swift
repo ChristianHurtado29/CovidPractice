@@ -62,15 +62,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func flag(_ countryCo: String) -> String {
-        let base = 127397
-        var usv = String.UnicodeScalarView()
-        for i in countryCo.utf16 {
-            usv.append(UnicodeScalar(base + Int(i))!)
-        }
-        return String(usv)
-    }
-    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -113,7 +104,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if tableView == globalTableView {
             return 170
         } else {
-            return 120
+            return 130
         }
     }
     

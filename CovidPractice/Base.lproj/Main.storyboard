@@ -176,49 +176,52 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-in-Mlh">
-                                <rect key="frame" x="20" y="165" width="374" height="201"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="201" id="zYL-Pb-eo4"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capital CIty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWs-Gu-v49">
-                                <rect key="frame" x="20" y="396" width="374" height="29"/>
+                                <rect key="frame" x="20" y="408" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Pop:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBq-tv-cg4">
-                                <rect key="frame" x="20" y="433" width="374" height="29"/>
+                                <rect key="frame" x="20" y="445" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d21-ZH-x40">
-                                <rect key="frame" x="20" y="522" width="374" height="217"/>
+                                <rect key="frame" x="20" y="534" width="374" height="328"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇺🇸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lV0-Rz-Dbq">
+                                <rect key="frame" x="20" y="165" width="374" height="223"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="223" id="pkO-m2-PiZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="322"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6p4-Hw-xuI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Xhh-mT-Ygf" firstAttribute="leading" secondItem="6p4-Hw-xuI" secondAttribute="leading" constant="20" id="1n2-aY-42c"/>
                             <constraint firstItem="eBq-tv-cg4" firstAttribute="top" secondItem="zWs-Gu-v49" secondAttribute="bottom" constant="8" symbolic="YES" id="51b-7c-J3L"/>
-                            <constraint firstItem="aZP-in-Mlh" firstAttribute="top" secondItem="Xhh-mT-Ygf" secondAttribute="bottom" constant="8" symbolic="YES" id="Md7-tb-VpZ"/>
+                            <constraint firstItem="zWs-Gu-v49" firstAttribute="top" secondItem="lV0-Rz-Dbq" secondAttribute="bottom" constant="20" id="Ilf-NF-ibd"/>
+                            <constraint firstItem="lV0-Rz-Dbq" firstAttribute="top" secondItem="Xhh-mT-Ygf" secondAttribute="bottom" constant="8" symbolic="YES" id="NYY-pz-fLr"/>
+                            <constraint firstItem="6p4-Hw-xuI" firstAttribute="trailing" secondItem="lV0-Rz-Dbq" secondAttribute="trailing" constant="20" id="V9a-9k-R26"/>
                             <constraint firstItem="d21-ZH-x40" firstAttribute="top" secondItem="eBq-tv-cg4" secondAttribute="bottom" constant="60" id="VbH-7s-FTF"/>
-                            <constraint firstItem="aZP-in-Mlh" firstAttribute="leading" secondItem="6p4-Hw-xuI" secondAttribute="leading" constant="20" id="aYR-vX-PdK"/>
                             <constraint firstItem="zWs-Gu-v49" firstAttribute="leading" secondItem="6p4-Hw-xuI" secondAttribute="leading" constant="20" id="ad8-7I-tnu"/>
-                            <constraint firstItem="6p4-Hw-xuI" firstAttribute="trailing" secondItem="aZP-in-Mlh" secondAttribute="trailing" constant="20" id="bCa-ua-7bw"/>
+                            <constraint firstItem="lV0-Rz-Dbq" firstAttribute="leading" secondItem="6p4-Hw-xuI" secondAttribute="leading" constant="20" id="kU9-Gs-4gN"/>
                             <constraint firstItem="eBq-tv-cg4" firstAttribute="leading" secondItem="6p4-Hw-xuI" secondAttribute="leading" constant="20" id="kUh-F2-VFi"/>
                             <constraint firstItem="d21-ZH-x40" firstAttribute="leading" secondItem="6p4-Hw-xuI" secondAttribute="leading" constant="20" id="mlM-fv-Zfc"/>
+                            <constraint firstItem="d21-ZH-x40" firstAttribute="bottom" secondItem="6p4-Hw-xuI" secondAttribute="bottom" id="reE-4U-jx2"/>
                             <constraint firstItem="6p4-Hw-xuI" firstAttribute="trailing" secondItem="Xhh-mT-Ygf" secondAttribute="trailing" constant="20" id="rzV-ce-rQP"/>
-                            <constraint firstItem="d21-ZH-x40" firstAttribute="height" secondItem="bt5-oY-uRs" secondAttribute="height" multiplier="0.242188" id="tM6-LQ-07R"/>
                             <constraint firstItem="6p4-Hw-xuI" firstAttribute="trailing" secondItem="zWs-Gu-v49" secondAttribute="trailing" constant="20" id="uRS-zK-CXZ"/>
-                            <constraint firstItem="zWs-Gu-v49" firstAttribute="top" secondItem="aZP-in-Mlh" secondAttribute="bottom" constant="30" id="vqy-ai-oaP"/>
                             <constraint firstItem="6p4-Hw-xuI" firstAttribute="trailing" secondItem="eBq-tv-cg4" secondAttribute="trailing" constant="20" id="vz7-aH-mfL"/>
                             <constraint firstItem="Xhh-mT-Ygf" firstAttribute="top" secondItem="6p4-Hw-xuI" secondAttribute="top" constant="40" id="x1d-6i-iEB"/>
                             <constraint firstItem="6p4-Hw-xuI" firstAttribute="trailing" secondItem="d21-ZH-x40" secondAttribute="trailing" constant="20" id="x2T-wY-DAt"/>
@@ -227,7 +230,7 @@
                     <navigationItem key="navigationItem" id="Xmh-Og-Dcj"/>
                     <connections>
                         <outlet property="countryCapital" destination="zWs-Gu-v49" id="0KX-kP-1NR"/>
-                        <outlet property="countryFlag" destination="aZP-in-Mlh" id="DhN-xD-XxF"/>
+                        <outlet property="countryFlag" destination="lV0-Rz-Dbq" id="eo6-jF-cfx"/>
                         <outlet property="countryName" destination="Xhh-mT-Ygf" id="psK-Bz-77R"/>
                         <outlet property="countryPopulation" destination="eBq-tv-cg4" id="PG2-Ba-cxw"/>
                         <outlet property="summaryText" destination="d21-ZH-x40" id="Itd-C5-1Yw"/>
