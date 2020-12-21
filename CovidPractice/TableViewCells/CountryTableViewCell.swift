@@ -23,9 +23,9 @@ class CountryTableViewCell: UITableViewCell {
     }
 //
     func configureCell(_ country: CountryInfo) {
-        flagLabel.text = flag(country.CountryCode)
-        countryName.text = country.Country
-        confirmedCase.text = "# of cases: \(formatCommas(country.TotalConfirmed))"
+        flagLabel.text = flag(country.countryCode)
+        countryName.text = country.country
+        confirmedCase.text = "# of cases: \(formatCommas(country.totalConfirmed))"
     }
     
     private func flag(_ countryCo: String) -> String {

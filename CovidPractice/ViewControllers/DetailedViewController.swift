@@ -21,7 +21,7 @@ class DetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fillInfo()
-        navigationItem.title = "\(country.Country)'s Covid Profile"
+        navigationItem.title = "\(country.country)'s Covid Profile"
     }
     
     func formatCommas(_ num: Int) -> String {
@@ -41,20 +41,20 @@ class DetailedViewController: UIViewController {
     }
         
     func fillInfo() {
-        apiClient.loadCountryInfo(countryName: self.country.Country) { (result) in
+        apiClient.loadCountryInfo(countryName: self.country.country) { (result) in
             switch result {
             case .failure(let error):
                 print("error in loading country info: \(error)")
             case .success(let basicCountry):
                 DispatchQueue.main.async {
-                    let recoveredPct = Double(self.country.TotalRecovered) / Double(self.country.TotalConfirmed) * 100.0
+                    let recoveredPct = Double(self.country.totalRecovered) / Double(self.country.totalConfirmed) * 100.0
                     let recText: String = String(format: "%.2f", recoveredPct)
-                    let deathPct = Double(self.country.TotalDeaths) / Double(self.country.TotalConfirmed) * 100
+                    let deathPct = Double(self.country.totalDeaths) / Double(self.country.totalConfirmed) * 100
                     let deathText: String = String(format: "%.2f", deathPct)
                     self.countryCapital.text = "Capital: \(basicCountry.first?.capital ?? "no cap")"
                     self.countryPopulation.text = "Population: \(self.formatCommas(basicCountry.first?.population ?? 0))"
                     self.countryName.text = basicCountry.first?.name
-                    self.summaryText.text = "The most recent information states that the \(basicCountry.first?.subregion ?? "")n nation has \(self.formatCommas(self.country.NewConfirmed)) new cases, bringing their total cases to \(self.formatCommas(self.country.TotalConfirmed)). To date, \(self.formatCommas(self.country.TotalRecovered)) \(basicCountry.first?.demonym ?? "")s have made full recoveries(% \(recText)), while \(self.formatCommas(self.country.TotalDeaths)) have died (% \(deathText))."
+                    self.summaryText.text = "The most recent information states that the \(basicCountry.first?.subregion ?? "")n nation has \(self.formatCommas(self.country.newConfirmed)) new cases, bringing their total cases to \(self.formatCommas(self.country.totalConfirmed)). To date, \(self.formatCommas(self.country.totalRecovered)) \(basicCountry.first?.demonym ?? "")s have made full recoveries(% \(recText)), while \(self.formatCommas(self.country.totalDeaths)) have died (% \(deathText))."
                     self.countryFlag.text = self.flag(basicCountry.first?.alpha2Code ?? "us")
                 }
             }

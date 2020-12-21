@@ -55,8 +55,8 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print("error is \(error.localizedDescription)")
             case .success(let covidInfo):
-                self.globalInfo = covidInfo.Global
-                self.countries = covidInfo.Countries
+                self.globalInfo = covidInfo.global
+                self.countries = covidInfo.countries
                 dump(self.globalInfo)
             }
         }
@@ -118,7 +118,7 @@ extension ViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        countries = countries.filter { $0.Country.contains(searchBar.text!)}
+        countries = countries.filter { $0.country.contains(searchBar.text!)}
         self.countriesTableView.reloadData()
         searchBar.resignFirstResponder()
     }

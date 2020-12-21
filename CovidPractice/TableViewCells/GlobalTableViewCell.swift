@@ -25,14 +25,14 @@ class GlobalTableViewCell: UITableViewCell {
         var stringRec = ""
         var stringMort = ""
         if let globe = globe {
-            let computedRec = Double(globe.TotalRecovered) / Double(globe.TotalConfirmed) * 100.0
-            let computedMortality = Double(globe.TotalDeaths) / Double(globe.TotalConfirmed) * 100
+            let computedRec = Double(globe.totalRecovered) / Double(globe.totalConfirmed) * 100.0
+            let computedMortality = Double(globe.totalDeaths) / Double(globe.totalConfirmed) * 100
             stringRec = String(format: "%.2f", computedRec)
             stringMort = String(format: "%.2f", computedMortality)
         }
-        totalCases.text =  "Total Cases: \(formatCommas(globe?.TotalConfirmed ?? 0))"
-        totalRecovered.text = "Total Recovered: \(formatCommas(globe?.TotalRecovered ?? 0))   % \(stringRec)"
-        totalDead.text = "Total Dead: \(formatCommas(globe?.TotalDeaths ?? 0))               %\(stringMort)"
+        totalCases.text =  "Total Cases: \(formatCommas(globe?.totalConfirmed ?? 0))"
+        totalRecovered.text = "Total Recovered: \(formatCommas(globe?.totalRecovered ?? 0))   % \(stringRec)"
+        totalDead.text = "Total Dead: \(formatCommas(globe?.totalDeaths ?? 0))              % \(stringMort)"
     }
     
 }
